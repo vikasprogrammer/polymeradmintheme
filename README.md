@@ -13,6 +13,11 @@ Designed with [Polymer](http://polymer-project.org/).
 * Search / Toolbar
 * Multi-level menu
 
+##Links
+[Demo](http://demo.tb3.co.in/polymer/admin-starter-theme/theme/#dashboard)
+
+[Xtendify](https://www.xtendify.com/en/product/458-polymer-admin-starter-template)
+
 ## Disclaimer
 
 This template is a work in progress. Feel free to send pull requests.
