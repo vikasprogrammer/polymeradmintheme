@@ -1,0 +1,178 @@
+<polymer-element name="menu-paper-form" noscript>
+  <template>
+    <style>
+    paper-slider {
+      width: 100%;
+    }
+    
+    section {
+      max-width: 1000px;
+      padding: 20px 0;
+      
+    }
+    
+    section > div {
+      padding: 14px;
+    }
+    
+    
+    .green-slider paper-slider::shadow #sliderKnobInner,
+    .green-slider paper-slider::shadow #sliderKnobInner::before,
+    .green-slider paper-slider::shadow #sliderBar::shadow #activeProgress {
+      background-color: #0f9d58;
+    }
+    
+    #ratingsLabel {
+      padding-left: 12px;
+      color: #a0a0a0;
+    }
+
+    paper-progress {
+      display: block;
+      width: 100%;
+      padding: 25px 0;
+    }
+    
+    paper-progress.pink::shadow #activeProgress {
+      background-color: #e91e63;
+    }
+    
+    paper-progress.pink::shadow #secondaryProgress {
+      background-color: #f8bbd0;
+    }
+
+    paper-checkbox {
+      padding: 20px 20px 20px 0;
+    }
+    
+    
+    
+    paper-checkbox.blue::shadow #ink[checked] {
+      color: #4285f4;
+    }
+    
+    paper-checkbox.blue::shadow #checkbox.checked {
+      border-color: #4285f4;
+    }
+
+    paper-radio-group.blue paper-radio-button::shadow #ink[checked] {
+      color: #4285f4;
+    }
+    
+    paper-radio-group.blue paper-radio-button::shadow #onRadio {
+      background-color: #4285f4;
+    }
+    
+    
+  
+    </style>
+    <h1>Paper Forms</h1>
+    <div layout horizontal>
+    <segment flex>
+        <h2>Input Elements</h2>
+        <strong>paper-input</strong>
+        <br><br>
+        <paper-input label="Type something..."></paper-input>
+
+        <br>
+
+        <paper-input floatingLabel label="Type only numbers... (floating)" validate="^[0-9]*$" error="Input is not a number!"></paper-input>
+
+        <br><br>
+        <strong>paper-checkbox</strong>
+        <br><br>
+        <div horizontal layout>
+        <paper-checkbox></paper-checkbox>
+        <div vertical layout>
+          <h4>Notifications</h4>
+          <div>Notify me about updates to apps or games that I've downloaded</div>
+        </div>
+        </div>
+        <br><br>
+        <strong>paper-radio-group</strong>
+        <br><br>
+        <section>
+  
+           <h4>Keep Wi-Fi on during sleep</h4>
+            
+           <paper-radio-group selected="2">
+             <paper-radio-button label="Always"></paper-radio-button><br>
+             <paper-radio-button label="Only when plugged in"></paper-radio-button><br>
+             <paper-radio-button label="Never"></paper-radio-button>
+           </paper-radio-group>
+            
+        </section>
+  
+    
+    </segment>
+    <segment flex>
+        <h2>Buttons</h2>
+        <strong>paper-button</strong>
+        <br><br>
+        <paper-button label="flat button"></paper-button>
+        <paper-button label="raised button" raisedButton></paper-button>
+        <br><br>
+        <strong>paper-toggle-button</strong>
+        <br><br>
+        <div center horizontal layout>
+          <div flex>Bluetooth</div>
+          <paper-toggle-button class="blue"></paper-toggle-button>
+        </div>
+        <br>
+        <div center horizontal layout>
+          <div flex>Wi-Fi</div>
+          <paper-toggle-button checked></paper-toggle-button>
+        </div>
+        
+        <br>
+        <br>
+        <strong>paper-fab</strong>
+        <br><br>
+        <paper-fab icon="arrow-forward"></paper-fab>
+
+        <br>
+        <br>
+        <br>
+
+        <paper-fab class="mini" icon="arrow-forward"></paper-fab>
+    
+    </segment>
+    </div>
+    <div layout horizontal>
+    <segment flex>
+
+        <strong>paper-slider</strong>
+        <br><br>
+        
+
+        <section class="green-slider">
+  
+            <div>
+              <span>Ratings</span><span id="ratingsLabel"></span>
+            </div>
+            <br>
+            <paper-slider id="ratings" pin snaps max="10" step="1" value="5"></paper-slider>
+          
+        </section>
+        <br><br>
+        <strong>paper-progress</strong>
+        <br><br>
+
+        <paper-progress value="40"></paper-progress><br>
+  
+        <paper-progress value="800" min="100" max="1000"></paper-progress><br>
+      
+        <paper-progress value="40" secondaryProgress="80"></paper-progress><br>
+      
+        <paper-progress value="200" max="200"></paper-progress><br>
+      
+        <paper-progress class="pink" value="80"></paper-progress><br>
+      
+        <paper-progress class="pink" value="40" secondaryProgress="80"></paper-progress>
+  
+
+
+    </segment>
+    </div>
+  </template>
+</polymer-element>

@@ -1,0 +1,23 @@
+{
+  "name": "component-load",
+  "author" : [
+    "Fabrice Weinberg <Fabrice@weinberg.me>"
+  ],
+  "keywords": [
+       "polymer",
+       "web-components"
+   ],
+   "ignore" : [
+    "component-1.html",
+    "component-2.html",
+    "demo-app.html",
+    "demo.html",
+    "index.html",
+    ".gitignore",
+    "README.md"
+   ],
+  "description" : "A web component to dynamically load web components.",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.2.4"
+  }
+}

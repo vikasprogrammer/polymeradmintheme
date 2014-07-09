@@ -1,0 +1,21 @@
+{
+    "name": "notification-elements",
+    "version": "0.1.0",
+    "description": "Web Notification API wrapper that allows you to do Notifications using Polymer",
+    "license": "MIT",
+    "main": "src/notification-elements.html",
+    "keywords": [
+        "web-components",
+        "polymer",
+        "notification"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "platform": "Polymer/platform#~0.2.3",
+        "polymer": "Polymer/polymer#~0.2.0"
+    }
+}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Web Component using Web Notifications API is amazing">
+
+    <title>&lt;Notification Elements&gt;</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- Import Web Components Polyfill -->
+    <script src="app/bower_components/platform/platform.js"></script>
+
+    <!-- Import Custom Element -->
+    <link rel="import" href="src/notification-elements.html">
+
+</head>
+<body>
+    
+    <header class="header">
+        <div class="wrapper">
+            <div class="wc-icon">
+                <img src="assets/img/icon-wc.png" alt="Web Components logo">
+            </div>
+            <h1 class="header-title">
+                <div class="first-line">&lt;<span class="highlight">notification</span></div>
+                <div class="second-line"><span class="highlight">elements</span>&gt;</div>
+            </h1>
+            <p class="header-subtitle">
+                A Web Component using Web Notifications API is amazing.
+            </p>
+            <p class="gh-btn pure-hidden-phone">
+                <iframe src="http://ghbtns.com/github-btn.html?user=mateusortiz&repo=notification-elements&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
+                <iframe src="http://ghbtns.com/github-btn.html?user=mateusortiz&repo=notification-elements&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Wrapper --> 
+    <main class="main-wrapper">
+        
+        <!-- Install Web Component -->
+        <div class="main">
+            <h2 class="main-head is-center"><span>Install</span></h2>
+
+            <section class="section pure-g-r">
+                <div class="center">
+                    <div class="pure-u-1">
+                        <h4 class="main-subhead">Install the web component with bower</h4>
+                        <pre>$ bower install notification-elements</pre>
+                        <a class="pure-button pure-button-primary" href="https://github.com/mateusortiz/notification-elements">Fork on GitHub</a>
+                        <a class="pure-button pure-button-primary" href="https://github.com/mateusortiz/notification-elements/archive/master.zip">Download Zip</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Notification element -->
+        <div class="box-demo 1-box-large pure-g">
+            <section class="center section pure-u-1">
+                <h2 class="main-head main-head-box">&lt;notification-elements&gt;</h2>
+                <p>Provides Notifications very easy using Web notification API and web components.</p>
+
+                <!-- Demo notification #1 -->
+                <p>The first demo, we have some standard <strong>Notification</strong> attributes, which when clicked triggers the <strong>notification</strong></p>
+                
+                <div class="demo">
+                    <h3>Simple notification</h3>
+                </div>
+
+                <pre><code>&lt;notification-elements header="Bienvenido" body="This is a simple notification!"&gt;&lt;/notification-elements&gt;</code></pre>
+
+                <!-- Demo notification #2 -->
+                <p>The second demo, you can define which <strong>icon, title, body, language, and Duration</strong> using <strong>attributes</strong> of notification, and other things.</p>
+
+                <notification-elements id="button-notification-1" header="Meooow!" body="I'm the Octocat!" icon="http://forum.webflow.com/plugins/emoji/images/octocat.png"></notification-elements>
+                <script>
+                window.addEventListener('polymer-ready', function(e) {
+                    document.querySelector('#demo-btn').addEventListener('click', function(e) {
+                        document.querySelector('#button-notification-1').notify();
+                    });
+                });
+                </script>
+
+                <div class="demo">
+                    <button id="demo-btn" class="pure-button pure-button-primary">Notification</button>
+                </div>
+
+                <pre><code>&lt;notification-elements id="button-notification-1 header="Meooow!" body="I'm the Octocat!" icon="http://forum.webflow.com/plugins/emoji/images/octocat.png"&gt;&lt;/notification-elements&gt;
+                                    
+&lt;script&gt;
+var demoBtn = document.querySelector('#demo-btn'),
+    notifyElement = document.querySelector('#button-notification-1');
+
+demoBtn.addEventListener('click', function(e) {
+    notifyElement.notify();
+});
+&lt;/script&gt;
+</code></pre>
+            
+                <!-- attributes -->
+                <h2 class="main-head main-head-box">Attributes</h2>
+                <table class="pure-table pure-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="pure-table-odd">
+                            <td>icon</td>
+                            <td>String</td>
+                            <td>icon.png</td>
+                            <td>Specifies whether there is a icon in the notification.</td>
+                        </tr>
+
+                        <tr>
+                            <td>body</td>
+                            <td>String</td>
+                            <td>Bienvenido</td>
+                            <td>Specifies your body notification</td>
+                        </tr>
+
+                        <tr class="pure-table-odd">
+                            <td>header</td>
+                            <td>String</td>
+                            <td>This is a simple notification!</td>
+                            <td>Specifies your text notification</td>
+                        </tr>
+
+                        <tr>
+                            <td>duration</td>
+                            <td>int</td>
+                            <td>10</td>
+                            <td>Specifies the time of notification</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Events -->
+                <h2 class="main-head main-head-box">Events</h2>
+                <table class="pure-table pure-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="pure-table-odd">
+                            <td>onclick</td>
+                            <td>It is triggered each time the user clicks on the notification.</td>
+                        </tr>
+
+                        <tr>
+                            <td>onshow</td>
+                            <td>It is triggered when the notification is displayed.</td>
+                        </tr>
+
+                        <tr class="pure-table-odd">
+                            <td>onerror</td>
+                            <td>It is triggered each time the notification encounters an error.</td>
+                        </tr>
+
+                        <tr>
+                            <td>onclose</td>
+                            <td>It is triggered when the user closes the notification.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Usage -->
+        <section class="main">
+            <h2 class="main-head is-center"><span>Usage</span></h2>
+
+            <div class="section pure-g-r center">
+                <div class="pure-u-1">
+                    <h4 class="main-subhead">1. Import Web Components Polyfill</h4>
+                    <pre><code>&lt;script src="bower_components/platform/platform.js"&gt;&lt;/script&gt;</code></pre>
+
+                    <h4 class="main-subhead">2. Import Custom Element</h4>
+                    <pre><code>&lt;link rel="import" href="src/notification-elements.html"&gt;</code></pre>
+
+                    <h4 class="main-subhead">3. Using It</h4>
+                    <pre><code>&lt;notification-elements&gt;&lt;/notification-elements&gt;</code></pre>
+
+                    <h4 class="main-subhead">4. Enjoy it!</h4>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="credits pure-u-1 is-center">
+            <p>
+                Developed with <span class="heart">♥</span> by <a href="https://www.twitter.com/mteusortiz">Mateus Ortiz</a>
+            </p>
+        </footer>
+    </main>
+
+    <!-- Script Polyfill -->
+    <script src="assets/js/notification.js"></script>
+
+    <!-- HighLight -->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <script src="assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

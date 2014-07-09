@@ -1,0 +1,22 @@
+<polymer-element name="menu-core-icon" noscript>
+  <template>
+  <style>
+    segment {
+      min-width: 200px;
+    }
+
+    core-icon.sized {
+      height: 128px;
+      width: 128px;
+    }
+  </style>
+    <h1>Core Icons</h1>
+    <div wrap horizontal layout>
+    <template repeat="{{icon in $.meta.metaData.icons.iconNames}}">
+      <segment><core-icon icon="{{icon}}"></core-icon> {{icon}}</segment>
+    </template>
+  	</div>
+  <core-iconset id="meta"></core-iconset>
+  </template>
+  
+</polymer-element>

@@ -1,0 +1,34 @@
+<polymer-element name="dashboard-elements" attributes="test" noscript>
+  <template>
+  <style>
+  
+  
+  #google_map {
+        width: 100%;
+        height: 400px;
+        display: block;
+        
+      }
+
+  </style>
+    <h1>Dashboard</h1>
+    <div layout horizontal>
+    <segment flex>
+      <h2>chart-js</h2>
+	    <chart-js></chart-js>
+    </segment>
+    <segment flex>
+      <h2>canvas-piechart</h2>
+   		<center><canvas-piechart size="250" data="[10,50,20,10]"></canvas-piechart></center>
+    </segment>
+    <segment flex>
+      <h2>polymer-ui-weather</h2>
+   		<polymer-ui-weather></polymer-ui-weather>
+    </segment>
+    </div>
+    <segment>
+      <h2>google-map</h2>
+      <google-map showcentermarker latitude="21" longitude="78" zoom="4" id="google_map"></google-map>
+    </segment>
+  </template>
+</polymer-element>

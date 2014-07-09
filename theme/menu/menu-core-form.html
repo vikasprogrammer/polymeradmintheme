@@ -1,0 +1,92 @@
+<polymer-element name="menu-core-form" noscript>
+  <template>
+  <style>
+  	/*segment {
+      width: 48%;
+      float:left;
+    }*/
+    core-input, core-field {
+      border: 1px solid #ddd;
+      padding: 5px;
+      margin: 2px;
+      height: 30px;
+      width: 80%;
+    }
+
+    .progress {
+	    background-color: #526e9c;
+	    height: 100%;
+	    padding: 5px 0;
+	    box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	  }
+          
+
+
+  </style>
+    <h1>Core Form Elements</h1>
+    <segment>
+    	<strong>core-input</strong> <br>
+    	<core-input></core-input>
+    	<br /> <br>
+    	<strong>core-field</strong>	<br>
+    	<core-field>
+		  <core-icon icon="account-circle"></core-icon>
+		  <input placeholder="hi!" flex>
+		</core-field>
+		<br>
+		<strong>core-icon-button</strong> <br>
+		<core-icon-button icon="accessibility"></core-icon-button>
+		<core-icon-button icon="done-all"></core-icon-button>
+		<core-icon-button icon="backup"></core-icon-button>
+		<core-icon-button icon="add-box"></core-icon-button>
+		<br><br>
+		<strong>core-item</strong> <br>
+		<core-item icon="account-circle" class="label-outline">
+	      <div flex>
+	        <div style="font-size: 18px;">John Doe</div>
+	        <div style="font-size: 12px;">123 A Street, San Francisco, CA</div>
+	      </div>
+	      <core-icon icon="more-vert"></core-icon>
+	    </core-item>
+	    <br><br>
+	    <strong>core-range</strong> <br>
+	    <core-range min="0" max="100" value="{{value}}" ratio="{{ratio}}"></core-range>
+        
+        <div class="progress" style="width: {{ratio}}%;">{{ratio}}%</div><br>
+        
+        value (0 - 100): <input value="{{value}}">
+
+        <br><br>
+        <strong>core-tool-tip</strong> <br>
+    	<core-tooltip label='position="left"' position="left">
+            <core-icon icon="account-box"></core-icon>
+          </core-tooltip>
+
+          <core-tooltip label='position="top"' position="top">
+            <core-icon icon="account-circle"></core-icon>
+          </core-tooltip>
+
+          <core-tooltip label='position="bottom"' position="bottom">
+            <core-icon icon="account-box"></core-icon>
+          </core-tooltip>
+
+          <core-tooltip label='position="right"' position="right">
+            <core-icon icon="account-circle"></core-icon>
+          </core-tooltip>
+          <core-tooltip label="<core-tooltip large>" large>
+            Larger tooltips for mobile
+          </core-tooltip>
+         <br><br>
+    </segment>
+   
+  </template>
+  <script>
+  Polymer('menu-core-form', {
+  	publish : {
+  		value : 50
+  	}
+  	
+  });
+  </script>
+</polymer-element>

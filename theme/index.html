@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Polymer Admin Starter Template</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="../components/platform/platform.js" register></script>
+    
+	  <link rel="import" href="admin-theme.html">
+
+
+	<style>
+	  html { height: 100% }
+	  body {
+	    margin: 0;
+	    height: 100%;
+	    transform: translateZ(0);
+	    -webkit-transform: translateZ(0);
+	    font-size: 14px;
+	    font-family: "Helvetica Neue", "Roboto", "Arial", sans-serif;
+	    -webkit-tap-highlight-color: rgba(0,0,0,0);
+	  }
+
+    #loading {
+      -webkit-align-items: center;
+      align-items: center;
+      color: #333;
+      display: block;
+      display: -webkit-flex;
+      display: flex;
+      font-family: "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: bold;
+      height: 100%;
+      -webkit-justify-content: center;
+      justify-content: center;  
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      z-index: -1;
+    }
+	</style>
+    
+
+  </head>
+
+  <body>
+  
+    <div id="loading">
+    <div>Loading theme</div>
+    </div>
+    <admin-theme></admin-theme>
+
+  </body>
+
+
+
+</html>

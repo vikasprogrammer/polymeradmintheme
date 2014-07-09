@@ -1,0 +1,106 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+The `canvas-piechart` element draws a piechart on a HTML5 Canvas
+
+##### Example
+
+    <canvas-piechart size="50" data="[10,20,40,50]"></canvas-piechart>
+
+@element canvas-piechart
+@blurb Draws a piechart on a HTMl5 Canvas.
+@status alpha
+@homepage http://timeu.github.io/canvas-piechart
+-->
+<polymer-element name="canvas-piechart" attributes="data size">
+
+  <template>
+    <canvas id="canvas" width="{{size}}" height="{{size}}" />
+  </template>
+
+  <script>
+    (function() {
+
+      var DEFAULT_COLORS20  =  ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"];
+      var DEFAULT_COLORS10  =  ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+
+      Polymer('canvas-piechart', {
+        /**
+         * The `colors` attribute specifies the colors to be used for each slice.
+         * If no colors are specified then the default-colors are used.
+         * 
+         * @attribute colors
+         * @type array[string]
+         */
+        colors: null,
+
+        /**
+         * The `size` property specifies the size of the piechart (Default: 50).
+         * 
+         * @attribute size
+         * @type number
+         */
+        size: 50,
+        /**
+         * The `data` property specifies the values for each slice .
+         * 
+         * @attribute data
+         * @type array[number]
+        */
+        data : null,
+        ctx_ : null,
+        observe : {
+          size:'update_',
+          data:'update_'
+        },
+        
+        created : function() {
+          this.data = this.data || [];
+        },
+        ready: function() {
+          this.ctx_ = this.$.canvas.getContext("2d");
+        },
+        update_ : function() {
+          this.async(this.render_);
+        },
+        getColors_ : function() {
+          var colors = this.colors;
+          if (!colors) {
+            colors = this.data.length > 10  ? DEFAULT_COLORS20 : DEFAULT_COLORS10;
+          }
+          return colors;
+        },
+        getTotal_ : function() {
+          var total = 0;
+          for (var i =0;i<this.data.length;i++) {
+            total += this.data[i];
+          }
+          return total;
+        },
+        render_ : function() {
+          var ctx = this.ctx_;
+          if (!ctx)
+            return;
+          ctx.clearRect(0, 0, this.size,this.size);
+          var colors = this.getColors_();
+          var radius = this.size/2;
+          var lastend = 1.5 * Math.PI;
+          var total = this.getTotal_();
+          for (var i = 0; i < this.data.length; i++) {
+            var slice = this.data[i];
+            var arcDest = Math.PI * 2 * (slice / total);
+            ctx.fillStyle = colors[i];
+            ctx.beginPath();
+            ctx.moveTo(radius, radius);
+            ctx.arc(radius, radius, radius, lastend, lastend + (arcDest), false);
+            ctx.lineTo(radius, radius);
+            ctx.fill();
+            lastend += arcDest;
+          }
+        }
+      });
+    })();
+
+  </script>
+
+</polymer-element>

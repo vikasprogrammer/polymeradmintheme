@@ -1,0 +1,216 @@
+<polymer-element name="menu-paper-ui" >
+  <template>
+  	<style>
+    
+    paper-dialog {
+      width: 50%;
+      min-width: 430px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    paper-dialog paper-button {
+      font-weight: bold;
+    }
+
+    paper-button[default] {
+      color: #4285f4;
+    }
+
+    paper-button {
+      margin: 20px;
+    }
+
+    paper-tabs, core-toolbar {
+      background-color: #00bcd4;
+      color: #fff;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    core-toolbar paper-tabs {
+      box-shadow: none;
+    }
+    
+    paper-tabs[noink][nobar] paper-tab.core-selected {
+      color: #ffff8d;
+    }
+    
+    paper-tabs.transparent-teal {
+      background-color: transparent;
+      color: #00bcd4;
+      box-shadow: none;
+    }
+    
+    paper-tabs.transparent-teal::shadow #selectionBar {
+      background-color: #00bcd4;
+    }
+    
+    paper-tabs.transparent-teal paper-tab::shadow #ink {
+      color: #00bcd4;
+    }
+    
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+  	</style>
+    <h1>Paper UI Elements</h1>
+
+    <segment flex>
+	    <strong>paper-dialog</strong>
+	    <br><br>
+	    <paper-dialog heading="Dialog" transition="paper-dialog-transition-center">
+	    <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores. No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+
+	    <p>Id qui scripta laboramus dissentiet, verterem partiendo vim at. Stet dissentiet ut mei. Iriure facilis eloquentiam pro eu, nec an esse inciderint. In meliore abhorreant sea. Eros nostro ocurreret at nec. Cu per regione persecuti.</p>
+
+	    <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores. No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+
+	    <paper-button label="More Info..." dismissive></paper-button>
+	    <paper-button label="Decline" affirmative></paper-button>
+	    <paper-button label="Accept" affirmative default></paper-button>
+
+	  	</paper-dialog>
+
+	  	<paper-dialog heading="Dialog" transition="paper-dialog-transition-bottom">
+	    <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores. No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+
+	    <p>Id qui scripta laboramus dissentiet, verterem partiendo vim at. Stet dissentiet ut mei. Iriure facilis eloquentiam pro eu, nec an esse inciderint. In meliore abhorreant sea. Eros nostro ocurreret at nec. Cu per regione persecuti.</p>
+
+	    <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores. No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+
+	    <paper-button label="More Info..." dismissive></paper-button>
+	    <paper-button label="Decline" affirmative></paper-button>
+	    <paper-button label="Accept" affirmative default></paper-button>
+
+	  	</paper-dialog>
+
+	  	<paper-button label="Dialog Box" on-tap="{{toggleDialog}}" raisedButton></paper-button>
+		<!-- TODO  <paper-button label="Dialog Center" on-click="{{toggleDialog('paper-dialog-transition-center')}}"></paper-button>
+	 	-->
+    </segment>
+
+    <segment>
+    	<strong>paper-toast</strong>
+	    <br><br>
+
+      	<paper-button raisedButton on-tap="{{toastIt}}" class="toast1" label="Discard Draft"></paper-button> 
+  
+	  	<paper-button raisedButton on-tap="{{toastIt}}" class="toast2"  label="Get Messages"></paper-button> 
+	  
+	 	<paper-button raisedButton on-tap="{{toastIt}}" class="toast3"  label="Send Message"></paper-button>
+
+	  	<paper-toast id="toast1" text="Your draft has been discarded."></paper-toast>
+	  
+	  	<paper-toast id="toast2" text="Connection timed out. Showing limited messages.">
+	    	<div style="color: #eeff41;" onclick="console.log('RETRY')">Retry</div>
+	  	</paper-toast>
+	  
+	  	<paper-toast id="toast3" class="capsule" text="Message sent" style="padding-right: 60px;"></paper-toast>
+	 
+	</segment>
+	<segment flex>
+		<strong>paper-tabs</strong>
+	    <br><br>
+
+	    <h3>A. No ink effect and no sliding bar</h3>
+  
+		  <paper-tabs selected="0" noink nobar>
+		  
+		    <paper-tab>ITEM ONE</paper-tab>
+		    <paper-tab>ITEM TWO</paper-tab>
+		    <paper-tab>ITEM THREE</paper-tab>
+		    
+		  </paper-tabs>
+		  
+		  <br>
+		  <br>
+
+		  <h3>B. The bar slides to the selected tab</h3>
+		  
+		  <paper-tabs selected="0" noink>
+		  
+		    <paper-tab>ITEM ONE</paper-tab>
+		    <paper-tab>ITEM TWO</paper-tab>
+		    <paper-tab>ITEM THREE</paper-tab>
+		    
+		  </paper-tabs>
+		  
+		  <br>
+		  <br>
+		  
+		  <h3>C. Inky Tabs</h3>
+		  
+		  <paper-tabs selected="0">
+		  
+		    <paper-tab>ITEM ONE</paper-tab>
+		    <paper-tab>ITEM TWO</paper-tab>
+		    <paper-tab>ITEM THREE</paper-tab>
+		    
+		  </paper-tabs>
+		  
+		  <br>
+		  <br>
+		  
+		  <paper-tabs selected="0" class="transparent-teal">
+		  
+		    <paper-tab>ITEM ONE</paper-tab>
+		    <paper-tab>ITEM TWO</paper-tab>
+		    <paper-tab>ITEM THREE</paper-tab>
+		    
+		  </paper-tabs>
+		  
+		  <br>
+		  <br>
+		  
+		  <core-toolbar class="medium-tall">
+		  
+		    <paper-icon-button icon="menu"></paper-icon-button>
+		    <div flex>Title</div>
+		    <paper-icon-button icon="search"></paper-icon-button>
+		    <paper-icon-button icon="more-vert"></paper-icon-button>
+		    
+		    <div class="bottom fit" horizontal center-justified end layout>
+		    
+		      <paper-tabs selected="0" flex style="max-width: 600px;">
+		    
+		        <paper-tab>ITEM ONE</paper-tab>
+		        <paper-tab>ITEM TWO</paper-tab>
+		        <paper-tab>ITEM THREE</paper-tab>
+		        
+		      </paper-tabs>
+		      
+		    </div>
+		  
+		  </core-toolbar>
+ 
+  
+  
+
+	</segment>
+
+  </template>
+  <script>
+
+    Polymer('menu-paper-ui', { 
+    	ready : function() {
+    	}, 
+    	toastIt: function(e, d, s) {
+    		console.log(s.attributes.class.value);
+    		this.shadowRoot.querySelector('#' + s.attributes.class.value).show();
+    	}, 
+    	toggleDialog : function(transition) {
+    	  //console.log(this.);
+    	  
+    	  transition = 'paper-dialog-transition-bottom';
+	      var dialog = this.shadowRoot.querySelector('paper-dialog[transition=' + transition + ']');
+	      dialog.toggle();
+	    }
+    })
+    
+  </script>
+
+</polymer-element>

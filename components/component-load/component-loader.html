@@ -1,0 +1,146 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+component-load is used to dynamicly load Web Components.
+The attribute `path` is used to define the relative/absolute path to the web component that should be loaded
+To pass in data to the loaded web component you can use the `data` attribute. `data` is expecting a plain object.
+
+##### Example
+
+    <component-load path="component-1.html" data="{'attr':value'}" if="true" />
+
+@class component-load
+@blurb A Polymer element for loading web components dynamicly.
+@status alpha
+@homepage https://github.com/FWeinb/component-load
+-->
+<polymer-element name="component-load" attributes="path data if">
+  <template>
+    <style>
+      :host{
+        display: block;
+        -webkit-transition: opacity .2s;
+                transition: opacity .2s;
+      }
+      :host([unresolved]){
+        opacity: 0;
+      }
+    </style>
+    <content></content>
+  </template>
+  <script>
+
+  var toAbsolutePath = function ( file ){
+    var pathname = location.pathname;
+    var index = pathname.lastIndexOf('/');
+        pathname = pathname.substring(0, index === -1 ? undefined : index);
+    return location.protocol + '//' + location.host + pathname + '/' + file;
+  };
+
+  var isAbsolute = function ( path ) {
+    return path.indexOf('http') === 0;
+  };
+
+  var extractName = function( path ){
+    var filename = path.substring(path.lastIndexOf('/')+1);
+    return filename.substring(0, filename.lastIndexOf('.'));
+  };
+
+  Polymer('component-load', {
+
+    observe : {
+      'if'   : 'load',
+      'path' : 'load'
+    },
+
+    /**
+     * This event is fired if the component was loaded successfully.
+     * Event `.detail` will contain the name and the path of the loaded component.
+     * @event component-load-loaded
+     */
+
+
+     /**
+      * Specifies the path to the web component that will be loaded.
+      * Can be absolute or relative to the current path.
+      * @attribute path
+      * @type string
+      * @default ''
+      */
+
+     path : '',
+
+    /**
+     * Object that is passed down to the loaded web component. eg. { 'attr' : 'value'}
+     * Each key will be converted to an attribute on the web component to load.
+     *
+     * @attribute data
+     * @type object
+     * @default {}
+     */
+    data : {},
+
+    /**
+     * The component is only loaded if this attribute is true.
+     * @attribute if
+     * @type boolean
+     * @default true
+     */
+    'if' : true,
+
+    ready : function ( ) {
+      this.loadedComponent = null;
+
+      new ObjectObserver( this.data ).open(function(added, removed, changed){
+        if ( this.loadedComponent) {
+          Object.keys(added).forEach(this.injectValue, this);
+          Object.keys(removed).forEach(this.injectValue, this);
+          Object.keys(changed).forEach(this.injectValue, this);
+        }
+      }.bind(this));
+
+    },
+
+    injectValue : function ( key ) {
+      this.loadedComponent[key] = this.data[key];
+    },
+
+    load : function( ){
+      this.removeLoadedComponent();
+
+      if ( this['if'] ) {
+        this.setAttribute('unresolved', '');
+
+        var loadPath = this.path;
+
+        if ( !isAbsolute( this.path ) ) {
+          loadPath = toAbsolutePath ( this.path );
+        }
+
+        Polymer.import ( [loadPath] , function ( ){
+          var name = extractName ( loadPath );
+          var lC = this.loadedComponent = document.createElement ( name );
+
+          this.appendChild( lC );
+
+          Object.keys(this.data).forEach(this.injectValue, this);
+
+          if ( Platform.flush ) Platform.flush();
+
+          this.removeAttribute('unresolved');
+
+          this.fire('component-load-loaded', { path : loadPath, name : name });
+        }.bind(this));
+
+      }
+    },
+
+    removeLoadedComponent : function ( ) {
+      if ( this.loadedComponent ) {
+        this.loadedComponent.remove();
+      }
+    }
+
+  });
+  </script>
+</polymer-element>

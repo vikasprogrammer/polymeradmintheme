@@ -1,0 +1,34 @@
+{
+  "name": "component-load",
+  "author": [
+    "Fabrice Weinberg <Fabrice@weinberg.me>"
+  ],
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "ignore": [
+    "component-1.html",
+    "component-2.html",
+    "demo-app.html",
+    "demo.html",
+    "index.html",
+    ".gitignore",
+    "README.md"
+  ],
+  "description": "A web component to dynamically load web components.",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.2.4"
+  },
+  "homepage": "https://github.com/FWeinb/component-load",
+  "_release": "eba3e9a29a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "eba3e9a29a8f40fb12bdc01707030e5ca557f5bd"
+  },
+  "_source": "git://github.com/FWeinb/component-load.git",
+  "_target": "master",
+  "_originalSource": "FWeinb/component-load",
+  "_direct": true
+}

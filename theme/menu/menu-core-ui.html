@@ -1,0 +1,94 @@
+<polymer-element name="menu-core-ui" noscript>
+  <template>
+  <style>
+  	/*segment {
+      width: 48%;
+      float:left;
+    }*/
+    core-toolbar {
+      background-color: #526e9c;
+    }
+
+    .container {
+      width: 400px;
+      height: 200px;
+      border: 4px solid #aaa;
+    }
+    
+    .container div {
+      overflow: hidden;
+    }
+    
+    #box1, #box3, #box5, #box6 {
+      width: 100px;
+    }
+          
+
+
+  </style>
+    <h1>Core UI Elements</h1>
+    <segment>
+    	<strong>core-toolbar</strong> <br> <br>
+    	<core-toolbar>
+		    <core-icon-button icon="menu"></core-icon-button>
+		    <span flex>Toolbar</span>
+		    <core-icon-button icon="refresh"></core-icon-button>
+		    <core-icon-button icon="add"></core-icon-button>
+  		</core-toolbar>
+      <br> <br>
+      <strong>core-toolbar with core-menu-button</strong> <br> <br>
+      <core-toolbar>
+
+        <core-menu-button icon="menu">
+
+          <core-item icon="settings" label="Settings"></core-item>
+          <core-item icon="add" label="Add"></core-item>
+          <core-item icon="search" label="Search"></core-item>
+
+        </core-menu-button>
+
+        <div flex>Toolbar</div>
+
+        <core-menu-button icon="add" halign="right">
+
+          <core-item icon="star-rate" label="Rate"></core-item>
+          <core-item icon="today" label="Today"></core-item>
+          <core-item icon="keep" label="Keep"></core-item>
+
+        </core-menu-button>
+
+        <core-menu-button icon="more-vert" halign="right" valign="top">
+
+          <core-item icon="visibility" label="Visibility"></core-item>
+          <core-item icon="extension" label="Extension"></core-item>
+          <core-item icon="info" label="Info"></core-item>
+
+        </core-menu-button>
+
+      </core-toolbar>
+
+      <br><br>
+      <strong>core-collapse</strong><br><br>
+      <section style="background-color: #526e9c;">
+
+        <button onclick="document.querySelector('#collapse1').toggle()">toggle collapse</button>
+
+        <core-collapse id="collapse1" fixedSize class="box" style="height: 300px;">
+          <div class="content">Forma temperiemque cornua sidera dissociata cornua recessit innabilis ligavit: solidumque coeptis nullus caelum sponte phoebe di regat mentisque tanta austro capacius amphitrite sui quin postquam semina fossae liquidum umor galeae coeptis caligine liberioris quin liquidum matutinis invasit posset: flexi glomeravit radiis certis invasit oppida postquam onerosior inclusum dominari opifex terris pace finxit quam aquae nunc sine altae auroram quam habentem homo totidemque scythiam in pondus ensis tegit caecoque poena lapidosos humanas coeperunt poena aetas totidem nec natura aethera locavit caelumque distinxit animalibus phoebe cingebant moderantum porrexerat terrae possedit sua sole diu summaque obliquis melioris orbem</div>
+        </core-collapse>
+
+      </section>
+      <br><br>
+      <strong>core-splitter</strong><br><br>
+      <div class="container" horizontal layout>
+        <div id="box1">left</div>
+        <core-splitter direction="left"></core-splitter>
+        <div flex>right</div>
+      </div>
+
+
+    </segment>
+    
+  </template>
+  
+</polymer-element>
