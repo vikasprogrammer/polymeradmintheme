@@ -12,7 +12,7 @@
 
   </style>
     <h1>Dashboard</h1>
-    <div layout horizontal>
+    <div layout horizontal wrap>
     <segment flex>
       <h2>chart-js</h2>
 	    <chart-js></chart-js>
@@ -31,4 +31,13 @@
       <google-map showcentermarker latitude="21" longitude="78" zoom="4" id="google_map"></google-map>
     </segment>
   </template>
+   <script>
+  Polymer.import( ['../components/canvas-piechart/canvas-piechart.html', 
+                    '../components/polymer-ui-weather/polymer-ui-weather.html',
+                    '../components/chart-js/chart-js.html',
+                   '../components/google-map/google-map.html'], function() {
+      // called when our import is fully loaded
+      // including any assets like CSS.
+  });
+  </script>
 </polymer-element>
