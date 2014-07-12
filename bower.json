@@ -1,0 +1,16 @@
+{
+  "name": "polymer-admin-theme",
+  "author" : [
+    "Vikas Singhal <vikas.programmer@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "main": "theme/index.html",
+  "description" : "A web component to create admin themes",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "polymer-ui-elements": "PolymerLabs/polymer-ui-elements#master",
+    "paper-elements": "Polymer/paper-elements#master",
+    "core-elements": "Polymer/core-elements#master",
+    "chart-js": "PolymerLabs/chart-js#master"
+  }
+}
