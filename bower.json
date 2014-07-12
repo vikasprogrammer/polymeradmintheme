@@ -3,7 +3,7 @@
   "author": [
     "Vikas Singhal <vikas.programmer@gmail.com>"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "theme/index.html",
   "description": "A web component to create admin themes",
   "dependencies": {
