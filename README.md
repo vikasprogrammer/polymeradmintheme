@@ -5,6 +5,7 @@ This is a free starter template to be used as Admin / Backend projects.
 Designed with [Polymer](http://polymer-project.org/).
 
 ##Features
+
 * URL management (e.g site.com/#menu-option).
 * Breadcrumbs
 * Dashboard - (Google map, weather, chart-js and piechart)
@@ -12,6 +13,11 @@ Designed with [Polymer](http://polymer-project.org/).
 * Core, Paper and Polymer UI Elements
 * Search / Toolbar
 * Multi-level menu
+* Dynamic Element Loading
+
+##Install
+
+`bower install`
 
 ##Links
 [Demo](http://demo.tb3.co.in/polymer/admin-starter-theme/theme/#dashboard)
