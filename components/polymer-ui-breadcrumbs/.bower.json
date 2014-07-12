@@ -2,19 +2,18 @@
   "name": "polymer-ui-breadcrumbs",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-ui-icon": "Polymer/polymer-ui-icon#^0.3.0",
-    "polymer-selector": "Polymer/polymer-selector#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-ui-icon": "Polymer/polymer-ui-icon#master",
+    "polymer-selector": "Polymer/polymer-selector#master"
   },
   "homepage": "https://github.com/Polymer/polymer-ui-breadcrumbs",
-  "version": "0.3.0",
-  "_release": "0.3.0",
+  "_release": "b537c8aa1f",
   "_resolution": {
-    "type": "version",
-    "tag": "0.3.0",
-    "commit": "b488412dbe804b78f15e729698fcfd6ead99c8f9"
+    "type": "branch",
+    "branch": "master",
+    "commit": "b537c8aa1f19ac1d93644614cf61fc88fc507568"
   },
   "_source": "git://github.com/Polymer/polymer-ui-breadcrumbs.git",
-  "_target": "^0.3.0",
+  "_target": "master",
   "_originalSource": "Polymer/polymer-ui-breadcrumbs"
 }

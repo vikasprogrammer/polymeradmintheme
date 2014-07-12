@@ -2,7 +2,7 @@
   "name": "polymer-ui-iconset",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-meta": "Polymer/polymer-meta#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-meta": "Polymer/polymer-meta#master"
   }
 }

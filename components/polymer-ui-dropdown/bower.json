@@ -2,10 +2,10 @@
   "name": "polymer-ui-dropdown",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-animation": "Polymer/polymer-animation#^0.3.0",
-    "polymer-overlay": "Polymer/polymer-overlay#^0.3.0",
-    "polymer-ui-menu": "Polymer/polymer-ui-menu#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-animation": "Polymer/polymer-animation#master",
+    "polymer-overlay": "Polymer/polymer-overlay#master",
+    "polymer-ui-menu": "Polymer/polymer-ui-menu#master"
   },
   "devDependencies": {
     "polymer-ui-base": "Polymer/polymer-ui-base#master",

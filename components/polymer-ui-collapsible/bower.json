@@ -2,7 +2,7 @@
   "name": "polymer-ui-collapsible",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-collapse": "Polymer/polymer-collapse#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-collapse": "Polymer/polymer-collapse#master"
   }
 }

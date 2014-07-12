@@ -2,9 +2,9 @@
   "name": "polymer-ui-sidebar",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-ui-theme-aware": "Polymer/polymer-ui-theme-aware#^0.3.0",
-    "polymer-flex-layout": "Polymer/polymer-flex-layout#^0.3.0",
-    "polymer-ui-sidebar-header": "Polymer/polymer-ui-sidebar-header#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-ui-theme-aware": "Polymer/polymer-ui-theme-aware#master",
+    "polymer-flex-layout": "Polymer/polymer-flex-layout#master",
+    "polymer-ui-sidebar-header": "Polymer/polymer-ui-sidebar-header#master"
   }
 }

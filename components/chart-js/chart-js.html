@@ -49,9 +49,8 @@ license that can be found in the LICENSE file.
         this.ctx = this.$.chart.getContext('2d');
         if (!this.kind) {
           this.kind = ['Radar', 'Line', 'Bar'][Math.floor(Math.random()*3)];
-        } 
           this.dataStringChanged(); 
-        
+        }
       },
       hexToRgb: function(hex) {
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

@@ -40,21 +40,6 @@
   resize: none;
 }
 
-.focusedColor {
-  color: #4059a9;
-  background: #4059a9;
-}
-
-:host(.invalid) #underline,
-:host(.invalid) #underlineHighlight,
-:host(.invalid) .focusedColor {
-  color: #d34336;
-  background: #d34336;
-}
-:host(.invalid) #floatedLabel {
-  color: #d34336;
-}
-
 #floatedLabel {
   font-size: 0.75em;
   background: transparent;
@@ -84,7 +69,8 @@
 }
 #label.animating {
   /* TODO: transforms are unprefixed in M36/ Remove when stable. */
-  transition: -webkit-transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
 }
 
 #labelSpan {
@@ -110,7 +96,6 @@
 #error {
   -webkit-flex: 1;
   flex: 1;
-  color: #d34336;
   font-size: 0.75em;
   padding: 0.5em 0;
 }
@@ -142,6 +127,7 @@
 }
 
 :host([multiline]) #underlineContainer.animating {
+  -webkit-transition: top 0.2s ease-in;
   transition: top 0.2s ease-in;
 }
 
@@ -170,11 +156,13 @@
   -webkit-transform: scale(0.1,2);
   transform: scale(0.1,2);
   /* TODO: transforms are unprefixed in M36/ Remove when stable. */
-  transition: -webkit-transform 0.1s cubic-bezier(0.2, 0, 0.03, 1);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
 }
 #underlineHighlight.animating {
   /* TODO: transforms are unprefixed in M36/ Remove when stable. */
-  transition: -webkit-transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
 }
 #underlineHighlight.focused {
   -webkit-transform: scale(1);
@@ -197,7 +185,8 @@
 #caret.animating {
   display: block;
    /* TODO: transforms are unprefixed in M36/ Remove when stable. */
-  transition: -webkit-transform 0.2s ease-out, opacity 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.03, 1);
 }
 #caret.focused {
   display: block;

@@ -2,19 +2,18 @@
   "name": "polymer-ui-menu",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0",
-    "polymer-selector": "Polymer/polymer-selector#^0.3.0",
-    "polymer-ui-theme-aware": "Polymer/polymer-ui-theme-aware#^0.3.0"
+    "polymer": "Polymer/polymer#master",
+    "polymer-selector": "Polymer/polymer-selector#master",
+    "polymer-ui-theme-aware": "Polymer/polymer-ui-theme-aware#master"
   },
   "homepage": "https://github.com/Polymer/polymer-ui-menu",
-  "version": "0.3.0",
-  "_release": "0.3.0",
+  "_release": "b98a84286e",
   "_resolution": {
-    "type": "version",
-    "tag": "0.3.0",
-    "commit": "5c82a68f81e62ead43389b0440150e57d6f9ef4a"
+    "type": "branch",
+    "branch": "master",
+    "commit": "b98a84286e687167ddb6f6b3a5b2c920d817ff7a"
   },
   "_source": "git://github.com/Polymer/polymer-ui-menu.git",
-  "_target": "^0.3.0",
+  "_target": "master",
   "_originalSource": "Polymer/polymer-ui-menu"
 }

@@ -1,16 +1,23 @@
 {
   "name": "polymer-admin-theme",
-  "author" : [
+  "author": [
     "Vikas Singhal <vikas.programmer@gmail.com>"
   ],
   "version": "0.1.0",
   "main": "theme/index.html",
-  "description" : "A web component to create admin themes",
+  "description": "A web component to create admin themes",
   "dependencies": {
     "polymer": "Polymer/polymer#master",
     "polymer-ui-elements": "PolymerLabs/polymer-ui-elements#master",
     "paper-elements": "Polymer/paper-elements#master",
     "core-elements": "Polymer/core-elements#master",
-    "chart-js": "PolymerLabs/chart-js#master"
+    "chart-js": "PolymerLabs/chart-js#master",
+    "canvas-piechart": "timeu/canvas-piechart#master",
+    "component-load": "FWeinb/component-load#master",
+    "google-map": "Polymer/google-map#master",
+    "polymer-ui-weather": "PolymerLabs/polymer-ui-weather#master"
+  },
+  "resolutions": {
+    "polymer": "master"
   }
 }

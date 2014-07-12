@@ -2,17 +2,16 @@
   "name": "polymer-ui-splitter",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0"
+    "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/polymer-ui-splitter",
-  "version": "0.3.0",
-  "_release": "0.3.0",
+  "_release": "0f4e8bc042",
   "_resolution": {
-    "type": "version",
-    "tag": "0.3.0",
-    "commit": "e9d79ae41a8275f7c26b97f1bb304661645b407a"
+    "type": "branch",
+    "branch": "master",
+    "commit": "0f4e8bc042df3b1fc0b3719986b9288f65d4a2ee"
   },
   "_source": "git://github.com/Polymer/polymer-ui-splitter.git",
-  "_target": "^0.3.0",
+  "_target": "master",
   "_originalSource": "Polymer/polymer-ui-splitter"
 }

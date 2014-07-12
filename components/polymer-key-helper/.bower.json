@@ -2,17 +2,16 @@
   "name": "polymer-key-helper",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.3.0"
+    "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/polymer-key-helper",
-  "version": "0.3.0",
-  "_release": "0.3.0",
+  "_release": "ef44c3620e",
   "_resolution": {
-    "type": "version",
-    "tag": "0.3.0",
-    "commit": "ea92fef2c40b067e12cd715a0fdc488a07c86dce"
+    "type": "branch",
+    "branch": "master",
+    "commit": "ef44c3620e1c275ac4f933dbb22e2c3d55d591e9"
   },
   "_source": "git://github.com/Polymer/polymer-key-helper.git",
-  "_target": "^0.3.0",
+  "_target": "master",
   "_originalSource": "Polymer/polymer-key-helper"
 }
